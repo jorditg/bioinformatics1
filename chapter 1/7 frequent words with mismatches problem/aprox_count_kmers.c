@@ -1,0 +1,123 @@
+﻿#define _GNU_SOURCE
+
+#include "gen.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+void count_approx_kmers(char * genome, size_t len, int k, size_t * counter, int mismatches);
+int nbr_mismatches(char * kmer, char * other_kmer, int k, int max_mis);
+void max_counter(size_t *counter, size_t len, size_t *max_values, size_t *values_length, size_t *value);
+
+int main(int argc, char *argv[])
+{
+	size_t genome_size;
+
+	char * filename = argv[1];  // data filename
+	int k = atoi(argv[2]);      // kmer size	
+	int mismatches = atoi(argv[3]); // mismatches allowed in kmer
+		
+	char * genome = load_genome(filename, &genome_size);
+
+	size_t n_elements = 1<<(2*k); // counter has 4^k diferent values <=> 1<<(2*k) values
+	size_t * counter = (size_t *) malloc(n_elements*sizeof(size_t));		
+	count_approx_kmers(genome, genome_size, k, counter, mismatches);
+
+	size_t values_length;
+	size_t value;
+	
+	size_t *max_values = (size_t *) malloc(255*sizeof(size_t));	
+	max_counter(counter, n_elements, max_values, &values_length, &value);
+	
+	char kmer[k];
+	for(size_t i = 0; i<values_length; i++) 
+	{
+		index2kmer(max_values[i], k, kmer);
+		printf("%s ", kmer);
+	}
+	printf("\n");
+	//printf("Value = %i", value);
+	
+	free(counter);
+	free(max_values);
+	free(genome);
+	
+	return 1;
+}
+
+
+/*
+	void count_kmers(char * genome, size_t len, int k, size_t * counter)
+	Counts the number of k-mers of size k that we have in the genome of length len.
+	Returns the result in the dynamic allocated vector counter.
+	This allocation should be freed after use.
+*/
+void count_approx_kmers(char * genome, size_t len, int k, size_t * counter, int mismatches)
+{	
+	size_t n_elements = 1<<(2*k); // counter has 4^k diferent values <=> 1<<(2*k) values
+	
+	// initialize counter
+	memset(counter, 0, n_elements);
+		
+	// count
+	for(size_t i = 0;i<len-k+1;i++) {
+		// counting without mismatch
+		counter[kmer2index(&genome[i], k)]++;
+	}
+
+    char kmer[k+1];
+	// counting with mismatches
+	for(size_t i = 0;i<n_elements;i++) {
+	    //if(counter[i] > 0) {
+	        index2kmer(i, k, kmer);
+		    for(size_t j = 0;j<len-k+1;j++) {
+		        if(i!=j) {
+		            int n = nbr_mismatches(kmer, &genome[j], k, mismatches);
+				    if(n > 0 && n <= mismatches)
+				        counter[i]++;
+			    }
+		    }
+		//}
+	}
+	
+}
+
+int nbr_mismatches(char * kmer, char * other_kmer, int k, int max_mis)
+{
+	int mis = 0;
+	
+	for(int i=0;i<k;i++)
+	{
+		if(kmer[i] != other_kmer[i])
+			mis++;
+		if(mis > max_mis)   // if mismatches greater than max -> doesn't count anymore
+			return mis;
+	}
+	return mis;
+}
+
+/*
+	void max_counter(size_t *counter, size_t len, size_t *max_values, size_t *values_length, size_t *value)
+	Returns a vector of index values that have the maximum counts in the vector counter.
+	Each index value returned corresponds to a enconded value of a k-mer that can be recovered with a
+	posterior call to index2kmer.
+*/
+void max_counter(size_t *counter, size_t len, size_t *max_values, size_t *values_length, size_t *value)
+{
+	int maxvalue = 0;
+	*values_length = 0;
+	for(size_t i = 0; i < len; i++)
+	{
+		if(counter[i] > maxvalue)
+		{
+			maxvalue = counter[i];
+			max_values[0] = i;
+			*values_length = 1;
+		} else if(counter[i] == maxvalue) {
+			max_values[(*values_length)++] = i;
+			
+		}
+	}
+	*value = maxvalue;
+}
+

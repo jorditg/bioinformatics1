@@ -1,0 +1,93 @@
+FAST COMBINATORIAL ALGORITHMS IN C
+Siegfried Koepf 2009-2013
+
+Changelog
+---------
+
+10.07.2013 Three new algorithms were added
+           -------------------------------
+           2.1.2. k-combinations without repetition in reverse colexicographic order
+           2.1.4. k-combinations with repetition in reverse colexicographic order
+           2.3.2. Variations with repetition in colexicographic order
+
+           Names of all files and C-functions where changed
+           ------------------------------------------------
+           names of files and C-functions now indicate their specific type of lexicographic order
+
+12.06.2013 Changes in 2.1.1. k-combinations without repetition in lexicographic order, comb_norep_lex.c
+           --------------------------------------------------------------------------------------------
+           "j = k - 1" replaced by "j = k - 2" in function gen_comb_norep_lex_next, step "find rightmost element to increase"
+           modified C-idiom in in function gen_comb_norep_lex_next, step "find rightmost element to increase"
+           modified C-idiom in in function gen_comb_norep_lex_next, step "set right-hand elements"
+
+           Changes in 2.1.3. k-combinations with repetition in lexicographic order, comb_rep_lex.c
+           ---------------------------------------------------------------------------------------
+           included step "easy case" in function gen_comb_rep_lex_next
+           "j = k - 1" replaced by "j = k - 2" in function gen_comb_rep_lex_next, step "find rightmost element to increase"
+           modified C-idiom in function gen_comb_rep_lex_next, step "find rightmost element to increase"
+
+           Changes in 2.3.1. Variations with repetition in lexicographic order, vari_rep_lex.c
+           -----------------------------------------------------------------------------------
+           "j = n - 1" replaced by "j = n - 2" in function gen_vari_rep_lex_next, step "find rightmost element to increase and reset right-hand elements"
+           modified C-idiom in function gen_vari_rep_lex_next, step "find rightmost element to increase and reset right-hand elements"
+
+           Changes in 2.4.1. Permutations with repetition in lexicographic order, perm_rep_lex.c
+           -------------------------------------------------------------------------------------
+           modified C-idiom in function gen_perm_rep_next, step "find rightmost element to increase"
+
+           Changes in 2.3.3. Necklaces in lexicographic order, neck_lex.c
+           --------------------------------------------------------------
+           modified C-idiom in function gen_neck_lex_next, step "find rightmost element to increase"
+
+12.04.2013 Changes in 2.2.2. k-partitions in colexicographic order, k_part_colex.c
+           -----------------------------------------------------------------------
+           "j = 1" replaced by "j = 2" in function gen_neck_lex_next, step "find leftmost element to increase and set r"
+           modified C-idiom in function gen_neck_lex_next, step "find leftmost element to increase and set r"
+           modified C-idiom in function gen_neck_lex_next, step "easy case"
+
+           Changes in 2.2.3. k-compositions in colexicographic order, k_comp_colex.c
+           -------------------------------------------------------------------------
+           modified C-idiom in function gen_k_comp_colex_next, step "find leftmost element to increase"
+
+06.02.2012 A new algorithm was added
+           -------------------------
+           2.2.3. k-compositions in colexicographic order
+
+26.04.2009 First public release of seven algorithms
+           ----------------------------------------
+           2.1.1. k-combinations without repetition in lexicographic order
+           Source files:
+           comb_norep_lex.c
+           comb_norep_lex_example.c
+
+           2.1.3. k-combinations with repetition in lexicographic order
+           Source files:
+           comb_rep_lex.c
+           comb_rep_lex_example.c
+
+           2.2.1. Partitions in reverse lexicographic order
+           Source files:
+           part_revlex.c
+           part_revlex_example.c
+
+           2.2.2. k-partitions in colexicographic order
+           Source files:
+           k_part_colex.c
+           k_part_colex_example.c
+
+           2.3.1. Variations with repetition in lexicographic order
+           Source files:
+           vari_rep_lex.c
+           vari_rep_lex_example.c
+
+           2.3.3. Necklaces in lexicographic order
+           Source files:
+           neck_lex.c
+           neck_lex_example.c
+
+           2.4.1. Permutations with repetition in lexicographic order
+           Source files:
+           perm_rep_lex.c
+           perm_rep_lex_example.c
+
+           header file: _generate.h

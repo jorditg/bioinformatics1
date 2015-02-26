@@ -1,0 +1,1 @@
+cat a.txt | sed 's/^/G/g' | gawk 'BEGIN { inc = 57.05 } // { val = inc + $2 ; print $1 " " val }'

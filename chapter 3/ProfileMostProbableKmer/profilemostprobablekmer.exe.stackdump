@@ -1,0 +1,10 @@
+Exception: STATUS_ACCESS_VIOLATION at eip=6F19167E
+eax=00000041 ebx=0022AA28 ecx=20038905 edx=00000000 esi=00000002 edi=00000002
+ebp=0022AC18 esp=0022A870 program=D:\cygwin\home\jdelatorre\Bioinformatics\chapter 3\ProfileMostProbableKmer\dist\Debug\Cygwin_4.x-Windows\profilemostprobablekmer.exe, pid 3336, thread main
+cs=001B ds=0023 es=0023 fs=003B gs=0000 ss=0023
+Stack trace:
+Frame     Function  Args
+0022AC18  6F19167E (0022AC3C, 004030B9, 0022FD30, 61026643)
+0022AC68  004016DF (00000001, 0022AC8C, 20010100, 61007F58)
+0022AD28  61007FB5 (00000000, 0022CDB4, 61007120, 00000000)
+End of stack trace

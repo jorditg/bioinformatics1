@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="90">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <logicalFolder name="sqlite-amalgamation-3080300"
+                     displayName="sqlite-amalgamation-3080300"
+                     projectFiles="true">
+        <itemPath>sqlite-amalgamation-3080300/sqlite3.c</itemPath>
+        <itemPath>sqlite-amalgamation-3080300/sqlite3.h</itemPath>
+        <itemPath>sqlite-amalgamation-3080300/sqlite3ext.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="sqlite3pp" displayName="sqlite3pp" projectFiles="true">
+        <itemPath>sqlite3pp/sqlite3pp.cpp</itemPath>
+        <itemPath>sqlite3pp/sqlite3pp.h</itemPath>
+        <itemPath>sqlite3pp/sqlite3ppext.cpp</itemPath>
+        <itemPath>sqlite3pp/sqlite3ppext.h</itemPath>
+      </logicalFolder>
+      <itemPath>main.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>sqlite3pp</Elem>
+    <Elem>sqlite-amalgamation-3080300</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <standard>8</standard>
+          <incDir>
+            <pElem>../../../../../boost_1_55_0</pElem>
+            <pElem>sqlite-amalgamation-3080300</pElem>
+            <pElem>sqlite3pp</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <linkerAddLib>
+            <pElem>../../../../../boost_1_55_0/libs</pElem>
+          </linkerAddLib>
+        </linkerTool>
+      </compileType>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sqlite-amalgamation-3080300/sqlite3.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="sqlite-amalgamation-3080300/sqlite3.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="sqlite-amalgamation-3080300/sqlite3ext.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="sqlite3pp/sqlite3pp.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sqlite3pp/sqlite3pp.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="sqlite3pp/sqlite3ppext.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sqlite3pp/sqlite3ppext.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sqlite-amalgamation-3080300/sqlite3.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="sqlite-amalgamation-3080300/sqlite3.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="sqlite-amalgamation-3080300/sqlite3ext.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="sqlite3pp/sqlite3pp.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sqlite3pp/sqlite3pp.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="sqlite3pp/sqlite3ppext.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sqlite3pp/sqlite3ppext.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

@@ -1,0 +1,36 @@
+       T  A  G  A  T  A
+    0 -1 -2 -3 -4 -5 -6 
+G  -1  0  0  0  0  0  0 
+T  -2  0  0  0  0  1  0 
+A  -3  0  1  0  1  0  2 
+G  -4  0  0  2  1  0  1 
+G  -5  0  0  1  1  0  0  
+C  -6  0  0  0  0  0  0 
+T  -7  0  0  0  0  1  0 
+T  -8  0  0  0  0  1  0 
+A  -9  0  1  0  1  0  2 
+A -10  0  1  0  1  0  1 
+G -11  0  0  2  1  0  0 
+G -12  0  0  1  1  0  0 
+T -13  0  0  0  0  2  1 
+T -14  0  0  0  0  1  1 
+A -15  0  1  0  1  0  2
+
+
+     T A G A T A
+   R R R R R R R 
+G  D I I I I I I 
+T  D I I I I A I 
+A  D I A I A I A 
+G  D I I A R I D 
+G  D I I D A I I 
+C  D I I I I I I 
+T  D I I I I A I 
+T  D I I I I A I 
+A  D I A I A I A 
+A  D I A I A I D 
+G  D I I A R I I 
+G  D I I D A I I 
+T  D I I I I A R 
+T  D I I I I D A 
+A  D I A I A I A
